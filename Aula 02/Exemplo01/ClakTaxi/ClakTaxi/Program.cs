@@ -9,8 +9,7 @@ namespace ClakTaxi
     class Program
     {
         static void Main(string[] args)
-        {
-
+        {            
             string leituraDoTeclado = "";
 
             Console.Write("Informe a kilometragem inicial:");
@@ -21,7 +20,16 @@ namespace ClakTaxi
             leituraDoTeclado = Console.ReadLine();
             int kmFinal = Convert.ToInt32(leituraDoTeclado);
 
+            Console.Write("Informe o tipo da bandeira:");
+            leituraDoTeclado = Console.ReadLine();
+            int tipoBandeira = Convert.ToInt32(leituraDoTeclado);
+
             decimal valorPorKilometro = 4.28m;
+            if (tipoBandeira == 2)
+            {
+                valorPorKilometro = 5.35m;
+            }
+
 
             decimal valorCorrida = (kmFinal - kmInicial) * valorPorKilometro;
 
