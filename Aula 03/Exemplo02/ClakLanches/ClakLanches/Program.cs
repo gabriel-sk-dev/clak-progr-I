@@ -13,6 +13,9 @@ namespace ClakLanches
             string[] usuarios = new string[] 
                 { "pedro", "maria", "joao", "gabriel", "paula" };
 
+            string[] senhas = new string[]
+                { "pedrinholegal", "parede", "123456", "xuxa", "atrasada" };
+
             bool erro = true;
             while (erro == true)
             {
@@ -28,19 +31,22 @@ namespace ClakLanches
 
                 // Responsabilidade de encontrar o nome do usuário no vetor
                 bool encontrouUsuario = false;
+                string senhaDoUsuario = "";
                 for (int i = 0; i < usuarios.Length; i++)
                 {
                     if (nome == usuarios[i])
                     {
                         encontrouUsuario = true;
+                        // Guardar a senha para futura verificacao
+                        senhaDoUsuario = senhas[i];
                     }
                 }
 
                 // Se encontrou o usuário e a senha for a desejada entao apresenta mensagem de boas vindas
-                if (encontrouUsuario == true && senha == "123456")
+                if (encontrouUsuario == true && senha == senhaDoUsuario)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Seja bem vindo " + usuarios[i]);
+                    Console.WriteLine("Seja bem vindo " + nome);
                     Console.ForegroundColor = ConsoleColor.White;
                     erro = false;
                 }
