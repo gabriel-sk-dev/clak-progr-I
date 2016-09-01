@@ -9,8 +9,7 @@ namespace ClakLanches
     class Program
     {
         // SIMULACAO DO BANCO DE DADOS
-        static string[] codigos = new string[]
-            { "001", "002", "003" };
+        static List<string> codigos = new List<string>();
         static string[] nomes = new string[]
             { "coca cola", "sanduiche", "imigracao 1980" };
         static string[] descricoes = new string[]
@@ -25,6 +24,9 @@ namespace ClakLanches
 
         static void Main(string[] args)
         {
+            codigos.Add("001");
+            codigos.Add("002");
+            codigos.Add("003");
 
             // Garantir que o programa fique rodando em loop
             bool possoSair = false;
@@ -91,7 +93,7 @@ namespace ClakLanches
             int posicaoProduto = -1;
 
             // Localizar o codigo dentro do vetor de codigos
-            for (int i = 0; i < codigos.Length; i++)
+            for (int i = 0; i < codigos.Count; i++)
             {
                 if (codigoLido == codigos[i])
                 {
@@ -145,7 +147,7 @@ namespace ClakLanches
             int posicaoProduto = -1;
 
             // Verificar se ja existe algum produto com o codigo
-            for (int i = 0; i < codigos.Length; i++)
+            for (int i = 0; i < codigos.Count ; i++)
             {
                 if (codigoLido == codigos[i])
                 {
@@ -165,10 +167,11 @@ namespace ClakLanches
             {
                 // Perguntar o nome do produto, descricao, preco e quantidade                
                 Console.Write("Digite o nome do produto: ");
-                string nome = Console.ReadLine();
+                string nomeLido = Console.ReadLine();
 
                 // Acrescentar nos vetores
-
+                codigos.Add(codigoLido);
+                nomes[nomes.Length] = nomeLido;
             }
 
 
