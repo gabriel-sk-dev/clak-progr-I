@@ -22,13 +22,16 @@ namespace OO_exemplo
             datas.Add(entrada);
             codigos.Add(codigo);           
 
+            // Lista de objetos do tipo ENTRADA
             IList<Entrada> bancoDeDados = new List<Entrada>(); 
 
+            // Criar um objeto do tipo ENTRADA
             Entrada entrada1 = new Entrada();
             entrada1.Placa = "8976";
             entrada1.Hora = DateTime.Now;
             entrada1.Modelo = "Fusca";
 
+            // Adicionar o objeto na lista
             bancoDeDados.Add(entrada1);
 
             Entrada entrada2 = new Entrada();
