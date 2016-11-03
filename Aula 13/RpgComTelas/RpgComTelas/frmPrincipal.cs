@@ -20,21 +20,26 @@ namespace RpgComTelas
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            //
             SqlConnection conexao = new SqlConnection(@"Data Source = GABRIEL-NT; Initial Catalog = Teste; " +
                                                         @"User ID =sa; Password =Gabriel;");
+
+            //
             string consulta = "SELECT * FROM Pessoas";
             SqlCommand comando = new SqlCommand(consulta, conexao);
 
+            //
             DataSet dados = new DataSet();
-
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             adaptador.Fill(dados);
 
+            //
             listPersonagens.Columns.Add("Personagem");
             listPersonagens.FullRowSelect = true;
             listPersonagens.View = View.Details;
             listPersonagens.GridLines = true;
 
+            //
             foreach (DataRow personagemBanco in dados.Tables[0].Rows)
             {
                 listPersonagens.Items.Add(new ListViewItem(personagemBanco["nome"].ToString()));
