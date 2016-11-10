@@ -53,8 +53,11 @@ namespace RpgComTelas
 
         private void btnCriaPersonagem_Click(object sender, EventArgs e)
         {
+            // abre formulario de criacao de personagem
             frmCriaPersonagem janela = new frmCriaPersonagem();
             janela.Show();
+
+            // fecha a janela atual
         }
     }
 }
