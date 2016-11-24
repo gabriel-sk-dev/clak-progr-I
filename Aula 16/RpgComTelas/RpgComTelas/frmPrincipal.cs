@@ -33,11 +33,10 @@ namespace RpgComTelas
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             adaptador.Fill(dados);
 
-            // configurando o listview
-            listPersonagens.Columns.Add("Personagem");
+            // configurando o listview           
             listPersonagens.FullRowSelect = true;
             listPersonagens.View = View.Details;
-            listPersonagens.GridLines = true;
+            listPersonagens.GridLines = true;           
 
             // Exibindo o resultado do banco dentro do listview
             foreach (DataRow personagemBanco in dados.Tables[0].Rows)
@@ -63,6 +62,14 @@ namespace RpgComTelas
 
         private void frmPrincipal_Activated(object sender, EventArgs e)
         {           
+        }
+
+        private void listPersonagens_DoubleClick(object sender, EventArgs e)
+        {
+            frmCidadePrincipal form = new frmCidadePrincipal();
+            form.NomePersonagem = listPersonagens.SelectedItems[0].Text;
+            form.Show();
+            this.Close();
         }
     }
 }

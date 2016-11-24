@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBatalha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatalha.Designer.cs">
+      <DependentUpon>frmBatalha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCidadePrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCidadePrincipal.Designer.cs">
+      <DependentUpon>frmCidadePrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCriaPersonagem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBatalha.resx">
+      <DependentUpon>frmBatalha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCidadePrincipal.resx">
+      <DependentUpon>frmCidadePrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCriaPersonagem.resx">
       <DependentUpon>frmCriaPersonagem.cs</DependentUpon>
     </EmbeddedResource>
