@@ -1,6 +1,14 @@
+USE [RPG]
+GO
+/****** Object:  Table [dbo].[Personagens]    Script Date: 01/12/2016 19:03:47 ******/
+DROP TABLE [dbo].[Personagens]
+GO
 USE [master]
 GO
-/****** Object:  Database [RPG]    Script Date: 10/11/2016 18:41:34 ******/
+/****** Object:  Database [RPG]    Script Date: 01/12/2016 19:03:47 ******/
+DROP DATABASE [RPG]
+GO
+/****** Object:  Database [RPG]    Script Date: 01/12/2016 19:03:47 ******/
 CREATE DATABASE [RPG]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -75,7 +83,7 @@ ALTER DATABASE [RPG] SET DELAYED_DURABILITY = DISABLED
 GO
 USE [RPG]
 GO
-/****** Object:  Table [dbo].[Personagens]    Script Date: 10/11/2016 18:41:34 ******/
+/****** Object:  Table [dbo].[Personagens]    Script Date: 01/12/2016 19:03:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -84,10 +92,13 @@ SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Personagens](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Nome] [varchar](6) NULL,
+	[Nome] [varchar](60) NULL,
 	[Classe] [varchar](30) NULL,
 	[Vida] [int] NULL,
 	[XP] [int] NULL,
+	[Nivel] [int] NULL,
+	[XPMinimo] [int] NULL,
+	[XPMaximo] [int] NULL,
  CONSTRAINT [PK_Personagens] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -96,6 +107,13 @@ CREATE TABLE [dbo].[Personagens](
 
 GO
 SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[Personagens] ON 
+
+GO
+INSERT [dbo].[Personagens] ([Id], [Nome], [Classe], [Vida], [XP], [Nivel], [XPMinimo], [XPMaximo]) VALUES (1, N'Jack Bauer', N'CTU', 100, 11, 1, 1, 100)
+GO
+SET IDENTITY_INSERT [dbo].[Personagens] OFF
 GO
 USE [master]
 GO
